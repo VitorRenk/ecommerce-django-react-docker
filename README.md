@@ -61,3 +61,6 @@ npm start
 ```
 
 Pronto, agora você pode visualizar o site disponível para os clientes.
+
+(em construção)
+obs: algumas partes estão incorretas pois ainda estou no processo de construção da documentação, após a inclusão do docker-compose, algumas partes como a utilização do banco de dados sqlite3 ficaram obsoletas para incluir um banco melhor, portanto em breve estarei atualizando esse documento.
