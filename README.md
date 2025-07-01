@@ -14,7 +14,7 @@
 
 ### Assista ao vídeo!
 
-📹 [Assista à demonstração do projeto no YouTube](https://youtu.be/OUWk_U099fo?si=CfnlAUHeuvFfw_5F)
+📹 [Assista à demonstração do projeto no YouTube](https://youtu.be/pp2hJ7Zvhzc?si=LTZP63bo3b81oEEy)
 
 
 ---
