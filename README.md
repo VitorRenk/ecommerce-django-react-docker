@@ -10,6 +10,15 @@
 
 #### O projeto também foi preparado com foco em escalabilidade, sendo compatível com ambientes baseados em Kubernetes, facilitando o deploy em ambientes de produção distribuídos.
 
+---
+
+### Assista ao vídeo!
+
+📹 [Assista à demonstração do projeto no YouTube](https://youtu.be/OUWk_U099fo?si=CfnlAUHeuvFfw_5F)
+
+
+---
+
 
 <p align="center">
   <img src="ecommerce.PNG" alt="react" />
