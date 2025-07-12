@@ -34,42 +34,80 @@
 
 ### Como utilizar o projeto
 
-Após realizar o clone do repositório, basta criar a pasta de ambiente env dentro da pasta do projeto e então instalar as dependências necessárias no terminal:
-```
-python -m venv env
-pip install -r requirements.txt
-```
-Obs: o arquivo requirements.txt estará dentro da pasta backend, portanto tenha certeza de estar dentro da pasta correta para a instalação.
+# E-commerce Django + React + Postgres
 
-Pressione F1 e selecione:
-- Python: Select Interpreter
-- Selecione o Python da pasta env
+## Pré-requisitos
 
-Após a instalação dos requirements, ative os scripts da env no terminal:
-```
-.\env\Scripts\Activate.ps1
-```
+Antes de rodar o projeto, certifique-se de ter o Docker instalado na sua máquina.  
+Você pode baixar o Docker Desktop aqui:  
+[https://www.docker.com/products/docker-desktop/](https://www.docker.com/products/docker-desktop/)
 
-Agora só falta acionar a api do django:
+---
+
+## Setup Inicial
+
+#### Clone o repositório:
+
 ```
-python manage.py makemigrations
-python manage.py migrate
+git clone https://github.com/seuusuario/seuprojeto.git
+cd seuprojeto
 ```
 
-Prossiga para o diretório backend e então utilize o seguinte comando:
-```
-python manage.py runserver
-```
+## Configurar arquivos de ambiente (.env)
 
-Com a página do django, é possível criar e personalizar as ordens, criar os produtos e gerenciar toda a infraestrutura do site em si.
+O projeto utiliza arquivos .env para definir variáveis de ambiente tanto para o backend quanto para o frontend.
 
-Para visualizar a página do react, basta entrar noo diretório do frontend com um novo terminal e utilizar o seguinte comando:
 ```
-npm install
-npm start
+mv .env.example .env
+mv frontend/.env.example frontend/.env
 ```
 
-Pronto, agora você pode visualizar o site disponível para os clientes.
+Edite os arquivos .env para configurar as variáveis conforme seu ambiente.
 
-(em construção)
-obs: algumas partes estão incorretas pois ainda estou no processo de construção da documentação, após a inclusão do docker-compose, algumas partes como a utilização do banco de dados sqlite3 ficaram obsoletas para incluir um banco melhor, portanto em breve estarei atualizando esse documento.
+
+## Build e Start dos containers
+
+Execute os comandos abaixo para construir as imagens e subir os containers em modo detached (em segundo plano):
+
+```
+docker-compose build
+docker-compose up -d
+```
+
+
+## Verificar containers ativos
+
+Verifique se os containers do backend, frontend e banco de dados estão rodando com:
+
+```
+docker ps
+```
+
+Você deve ver containers com nomes parecidos com:
+- ecommerce-django-react-docker-web-1 (backend Django)
+- ecommerce-django-react-docker-web-1 (frontend React)
+- ecommerce-django-react-docker-web-1 (Postgres)
+
+
+## Acessar os serviços
+
+Abra seu navegador e acesse:
+
+|Serviço           |URL                        |
+|------------------|---------------------------|
+|Frontend (React)  |http://localhost:3000      |
+|Backend (Django)  |http://localhost:8000      |
+|Admind Django     |http://localhost:8000/admin|
+
+
+# Algumas Dicas Importantes
+
+ - ### O arquivo entrypoint.sh do backend já tem permissão de execução garantida pelo Dockerfile. Caso você tenha problemas, confira isso.
+ - ### Variáveis de ambiente são carregadas automaticamente pelo Docker Compose via .env.
+ - ### Se fizer alterações no código backend ou frontend, pode ser necessário rebuildar as imagens com docker-compose build novamente.
+ - ### Para parar os containers, use:
+    ```
+    docker-compose down
+    ```
+
+
