@@ -1,12 +1,10 @@
 # Usa imagem base com Python
 FROM python:3.12.3
 
-
 # Define o diretório de trabalho no container
 WORKDIR /app
 
 RUN apt-get update && apt-get install -y netcat-openbsd
-
 
 # Copia o requirements para instalar dependências antes (melhor cache)
 COPY requirements.txt .
@@ -16,6 +14,9 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 # Copia o restante do código
 COPY . .
+
+# Garante permissão de execução para o entrypoint
+RUN chmod +x /app/entrypoint.sh
 
 # Expõe a porta 8000
 EXPOSE 8000

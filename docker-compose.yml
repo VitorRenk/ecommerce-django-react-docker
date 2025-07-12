@@ -4,7 +4,6 @@ services:
     build: ./backend
     command: /app/entrypoint.sh
     volumes:
-      - ./backend:/app
       - ./backend/media:/app/media
     ports:
       - "8000:8000"
