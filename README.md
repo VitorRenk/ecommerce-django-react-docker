@@ -43,27 +43,32 @@ Você pode baixar o Docker Desktop aqui:
 ---
 ### Setup Inicial
 
-Clone o repositório:
+Clone o repositório utilizando o Git Bash dentro de uma pasta:
 
 ```
-git clone https://github.com/seuusuario/seuprojeto.git
-cd seuprojeto
+git clone https://github.com/VitorRenk/ecommerce-django-react-docker.git
 ```
+
+Abra ele com o VSCode e abra o terminal com (CTRL + ').
 
 ---
 ### Configurar arquivos de ambiente (.env)
 
 O projeto utiliza arquivos .env para definir variáveis de ambiente tanto para o backend quanto para o frontend.
 
+Agora utilize os seguintes comandos para renomear as .env's.
+
 ```
 mv .env.example .env
 mv frontend/.env.example frontend/.env
 ```
 
-Edite os arquivos .env para configurar as variáveis conforme seu ambiente.
+Edite os arquivos .env para configurar as variáveis conforme seu ambiente ou mantenha as que ja estão pré-estabelecidas.
 
 ---
 ### Build e Start dos containers
+
+Assegure-se de que as portas 8000, 3000, 80 e 5432 não estão sendo utilizadas.
 
 Execute os comandos abaixo para construir as imagens e subir os containers em modo detached (em segundo plano):
 
