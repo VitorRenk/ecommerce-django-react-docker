@@ -1,4 +1,4 @@
-# Projeto E-commerce
+# Projeto E-commerce Utilizando Django + React + Postgres
 
 ### Introdução
 
@@ -32,28 +32,26 @@
 
 ---
 
-### Como utilizar o projeto
+## Como utilizar o projeto
 
-# E-commerce Django + React + Postgres
-
-## Pré-requisitos
+### Pré-requisitos
 
 Antes de rodar o projeto, certifique-se de ter o Docker instalado na sua máquina.  
 Você pode baixar o Docker Desktop aqui:  
 [https://www.docker.com/products/docker-desktop/](https://www.docker.com/products/docker-desktop/)
 
 ---
+### Setup Inicial
 
-## Setup Inicial
-
-#### Clone o repositório:
+Clone o repositório:
 
 ```
 git clone https://github.com/seuusuario/seuprojeto.git
 cd seuprojeto
 ```
 
-## Configurar arquivos de ambiente (.env)
+---
+### Configurar arquivos de ambiente (.env)
 
 O projeto utiliza arquivos .env para definir variáveis de ambiente tanto para o backend quanto para o frontend.
 
@@ -64,8 +62,8 @@ mv frontend/.env.example frontend/.env
 
 Edite os arquivos .env para configurar as variáveis conforme seu ambiente.
 
-
-## Build e Start dos containers
+---
+### Build e Start dos containers
 
 Execute os comandos abaixo para construir as imagens e subir os containers em modo detached (em segundo plano):
 
@@ -74,8 +72,8 @@ docker-compose build
 docker-compose up -d
 ```
 
-
-## Verificar containers ativos
+---
+### Verificar containers ativos
 
 Verifique se os containers do backend, frontend e banco de dados estão rodando com:
 
@@ -88,8 +86,8 @@ Você deve ver containers com nomes parecidos com:
 - ecommerce-django-react-docker-web-1 (frontend React)
 - ecommerce-django-react-docker-web-1 (Postgres)
 
-
-## Acessar os serviços
+---
+### Acessar os serviços
 
 Abra seu navegador e acesse:
 
@@ -99,13 +97,13 @@ Abra seu navegador e acesse:
 |Backend (Django)  |http://localhost:8000      |
 |Admind Django     |http://localhost:8000/admin|
 
+---
+### Algumas Dicas Importantes
 
-# Algumas Dicas Importantes
-
- - ### O arquivo entrypoint.sh do backend já tem permissão de execução garantida pelo Dockerfile. Caso você tenha problemas, confira isso.
- - ### Variáveis de ambiente são carregadas automaticamente pelo Docker Compose via .env.
- - ### Se fizer alterações no código backend ou frontend, pode ser necessário rebuildar as imagens com docker-compose build novamente.
- - ### Para parar os containers, use:
+ - #### O arquivo entrypoint.sh do backend já tem permissão de execução garantida pelo Dockerfile. Caso você tenha problemas, confira isso.
+ - #### Variáveis de ambiente são carregadas automaticamente pelo Docker Compose via .env.
+ - #### Se fizer alterações no código backend ou frontend, pode ser necessário rebuildar as imagens com docker-compose build novamente.
+ - #### Para parar os containers, use:
     ```
     docker-compose down
     ```
